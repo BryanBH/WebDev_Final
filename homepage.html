@@ -6,14 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StatTracker</title>
     <link rel="stylesheet" href="style.css"/>
+    <style>
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
-    <h1>STAT TRACKER</h1>
+
     <ul>
-        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="homepage.html">Home</a></li>
         <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#leaderboard">Leaderboard</a></li>
         <li><a href="#about">About</a></li>
+        <li id="right"><a href="login.html">Login</a></li>
     </ul>
+
+    <h2>STAT TRACKER</h2>
+
+    <table>
+        <tr>
+            <td class="search">
+                <input type="text" placeholder="Search" required/>
+            </td>
+            <td>
+                <select name="platform" class="platform">
+                    <option value="" selected="selected">activision</option>
+                    <option value="" selected="selected">battleNet</option>
+                    <option value="" selected="selected">playstation</option>
+                    <option value="" selected="selected">steam</option>
+                    <option value="" selected="selected">xbox</option>  
+                </select>
+            </td>
+        </tr>
+    </table>
+    
 </body>
 </html>
