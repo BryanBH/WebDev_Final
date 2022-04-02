@@ -50,7 +50,34 @@ img.image {
 
 .container {
     text-align: center;
+	text-font
     padding: 50px;
+}
+
+.leaderboard-table {
+	background: WhiteSmoke;
+	border-radius:10px;
+	border-collapse: collapse;
+
+	margin: 100px 100px 20px 950px;
+	max-width: 1000px;
+	padding:5px 20px;
+	height: 150%;
+	width: 150%;
+	box-shadow: 5 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+td {
+	background:white;
+	border-bottom: 1px solid WhiteSmoke;
+	padding:20px;
+	
+	text-align:center;
+	vertical-align:middle;
+	
+	font-weight:300;
+	font-size:18px;
+	text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -61,6 +88,12 @@ h2 {
     text-align: center;
     font-size: 500%;
     margin: 100px 100px 20px 100px;
+}
+
+h3 {
+    text-align: center;
+    font-size: 300%;
+    margin: 50px 100px 20px 100px;
 }
 
 ul {
