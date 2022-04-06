@@ -21,13 +21,23 @@ app.get("/callAPI", (req, res) => {
 		const object = [];
 		for (let segment of segments) {
 			const stats = segment.stats;
+			// const kills = segment.stats.kills.value;
 			const isEmpty = Object.keys(stats).length === 0;
+
+			// const killsDisplay = segment.stats.kills.displayValue;
+			// console.log(kills);
+			// console.log(killsValue);
+
 			if (!isEmpty) {
+				console.log(segment);
 				object.push({
 					metadata: segment.metadata,
 					stats: segment.stats,
 					type: segment.type,
+					killsValue: segment.stats.kills.displayValue,
 				});
+
+				// console.log(object.killsValue);
 			}
 		}
 		res.send({ object });

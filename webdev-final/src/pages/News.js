@@ -31,8 +31,11 @@ const New = () => {
 					return (
 						<div className="news-container">
 							<div className="news-image">
-								<a href={link} target="_blank">
-									<img src={img} />
+								<a
+									href={link}
+									target="_blank"
+									rel="noopener noreferrer">
+									<img src={img} alt="legend" />
 								</a>
 							</div>
 							<div className="news-text">

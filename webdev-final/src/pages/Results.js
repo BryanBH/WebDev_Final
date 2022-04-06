@@ -30,9 +30,8 @@ const Results = () => {
 			});
 	}, []);
 
-	
 	console.log(legendStats);
-	
+	console.log(lifetimeStats);
 
 	return (
 		<div className="container">
@@ -41,14 +40,20 @@ const Results = () => {
 			<div className="lifetime-container">
 				{lifetimeStats &&
 					lifetimeStats.map((object) => {
-						const { arenaRankScore, damage, kills, level } = object;
+						const { arenaRankScore, kills, level } = object;
+						let damage = null;
+						console.log(Object.keys(object));
+
+						if (Object.keys(object).includes("damage")) {
+							damage = object.damage;
+						}
 						return (
 							<table
 								className="lifetime-table"
 								style={{ width: "80%" }}>
 								<thead>
 									<tr>
-										<th colSpan="3">Lifetime stats</th>
+										<th colSpan="3">Lifetime Stats</th>
 									</tr>
 									<tr>
 										<th colSpan="3">
@@ -60,20 +65,27 @@ const Results = () => {
 								<tbody>
 									<tr>
 										<th>Kills</th>
-										<th>Damage</th>
+										{damage ? <th>Damage</th> : null}
 										<th>Level</th>
 									</tr>
 									<tr>
 										<td>kills: {kills.displayValue}</td>
-										<td>
-											Total damage: {damage.displayValue}{" "}
-										</td>
+										{damage ? (
+											<td>
+												Total damage:{" "}
+												{damage.displayValue}
+											</td>
+										) : null}
 										<td>Level: {level.displayValue}</td>
 									</tr>
 									<tr>
-										<td>Top {100 - kills.percentile}%</td>
-										<td>Top {100 - damage.percentile}%</td>
-										<td>Top {100 - level.percentile}%</td>
+										<td>Bottom {100 - kills.percentile}%</td>
+										{damage ? (
+											<td>
+												Bottom {100 - damage.percentile}%
+											</td>
+										) : null}
+										<td>Bottom {100 - level.percentile}%</td>
 									</tr>
 								</tbody>
 							</table>
@@ -85,36 +97,55 @@ const Results = () => {
 				{legendStats &&
 					legendStats.map((legend) => {
 						const { metadata, stats } = legend;
-						const { kills, damage } = legend.stats;
-						const ability = Object.entries(stats)[2];
+						const { kills } = stats;
+						let damage = null;
+						let ability = null;
+						if (Object.keys(stats).includes("damage")) {
+							damage = stats.damage;
+						}
+						if (Object.keys(stats).length === 3) {
+							ability = Object.entries(stats)[2];
+						}
+
+						console.log(ability);
 						return (
 							<div className="legend">
 								<img
 									src={metadata.portraitImageUrl}
 									alt="legend portrait"
 								/>
-								{console.log(ability)}
-								<table className="legend-stats-table">
+								{/* {console.log(ability)} */}
+								<table className="legend-stats-table" >
 									<thead>
 										<tr>
 											<th>Kills</th>
-											<th>Damage</th>
-											<th>{ability[1].displayName}</th>
+											{damage ? <th>Damage</th> : null}
+											{ability ? (
+												<th>
+													{ability[1].displayName}
+												</th>
+											) : null}
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td>{kills.displayValue}</td>
-											<td>{damage.displayValue}</td>
-											<td>{ability[1].displayValue}</td>
+											{damage ? (
+												<td>{damage.displayValue}</td>
+											) : null}
+											{ability? (<td>{ability[1].displayValue}</td>) : null}
 										</tr>
 										<tr>
-											<td>Top {kills.percentile}%</td>
-											<td>Top {damage.percentile}%</td>
-											<td>
-												Top
-												{100 - ability[1].percentile}
-											</td>
+											<td>Bottom {kills.percentile}%</td>
+											{damage ? (
+												<td>
+													Bottom {damage.percentile}%
+												</td>
+											) : null}
+											{ability? ( <td>
+												Bottom {""}
+												{100 - ability[1].percentile}%
+											</td>): null}
 										</tr>
 									</tbody>
 								</table>
