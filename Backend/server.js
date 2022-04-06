@@ -3,6 +3,7 @@ const app = express();
 const port = 5001;
 app.use(express.json());
 const TrackerGG = require("@notiixd/trackergg");
+const { default: axios } = require("axios");
 const tapi = new TrackerGG({ api_key: "11a808bc-f421-4aef-a01d-d508dd8a1a34" });
 
 app.listen(port, () => {

@@ -19,7 +19,7 @@ const Landing = () => {
 	};
 	return (
 		<>
-			<h2>STAT TRACKER</h2>
+			<h2>APEX TRACKER</h2>
 
 			<div className="form-container">
 				<table>

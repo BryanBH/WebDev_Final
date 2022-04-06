@@ -1,0 +1,28 @@
+.main-container {
+	display: "flex";
+	justify-content: "center";
+	align-items: "center";
+	flex-direction: "column";
+	width: 100%;
+	font-family: "Robot0", sans-serif;
+}
+
+.news-container {
+	width: 80%;
+	display: "flex";
+	justify-content: "center";
+	align-items: "center";
+}
+
+.news-image {
+}
+
+.news-text {
+}
+
+.news-title {
+	font-size: 2rem;
+}
+
+.news-description {
+}

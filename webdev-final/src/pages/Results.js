@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-import "../css/Results.css";
+import "../css/results.css";
 
 const Results = () => {
 	const location = useLocation();
@@ -20,17 +20,19 @@ const Results = () => {
 				},
 			})
 			.then((response) => {
-				// console.log(response.data);
 				const segments = response.data.object;
 				const life = segments.shift();
 				setLegendStats(segments);
 				setLifetimeStats([life.stats]);
+			})
+			.catch((error) => {
+				console.log(error);
 			});
 	}, []);
 
-	// console.log(lifetimeStats);
+	
 	console.log(legendStats);
-	// console.log(Object.keys(legendStats))
+	
 
 	return (
 		<div className="container">
@@ -43,7 +45,7 @@ const Results = () => {
 						return (
 							<table
 								className="lifetime-table"
-								style={{ width: "80%"}}>
+								style={{ width: "80%" }}>
 								<thead>
 									<tr>
 										<th colSpan="3">Lifetime stats</th>
@@ -110,7 +112,7 @@ const Results = () => {
 											<td>Top {kills.percentile}%</td>
 											<td>Top {damage.percentile}%</td>
 											<td>
-												Top 
+												Top
 												{100 - ability[1].percentile}
 											</td>
 										</tr>

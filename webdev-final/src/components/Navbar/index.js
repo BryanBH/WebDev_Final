@@ -15,9 +15,6 @@ const Navbar = () => {
 					<NavLink to="news" activestyle="true">
 						News
 					</NavLink>
-					<NavLink to="leaderboard" activestyle="true">
-						Leaderboard
-					</NavLink>
 					<NavLink to="about" activestyle="true">
 						About
 					</NavLink>
