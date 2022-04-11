@@ -18,12 +18,12 @@ const Landing = () => {
 		navigate("/results", { state: { platform: selects, user: username } });
 	};
 	return (
-		<>
-			<h2>APEX TRACKER</h2>
+		<div className="landing-container">
+			<h1 className="landing-title">APEX TRACKER</h1>
 
 			<div className="form-container">
-				<table>
-					<tbody>
+				<table className="landing-table">
+					<thread>
 						<tr>
 							<td className="search">
 								<input
@@ -66,10 +66,10 @@ const Landing = () => {
 								</button>
 							</td>
 						</tr>
-					</tbody>
+					</thread>
 				</table>
 			</div>
-		</>
+		</div>
 	);
 };
 

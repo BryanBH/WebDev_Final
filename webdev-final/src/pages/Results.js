@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-import "../css/results.css";
+import "../css/Results.css";
 
 const Results = () => {
 	const location = useLocation();
@@ -35,7 +35,7 @@ const Results = () => {
 
 	return (
 		<div className="container">
-			<h1>{username} Stats</h1>
+			<h1 className="user-title">{username} Stats</h1>
 
 			<div className="lifetime-container">
 				{lifetimeStats &&

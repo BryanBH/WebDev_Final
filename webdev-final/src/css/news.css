@@ -1,28 +1,106 @@
 .main-container {
-	display: "flex";
-	justify-content: "center";
-	align-items: "center";
-	flex-direction: "column";
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	width: 100%;
-	font-family: "Robot0", sans-serif;
+	font-family: "Roboto", sans-serif;
+	background-image: url(../images/Season5.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
 }
 
 .news-container {
-	width: 80%;
-	display: "flex";
-	justify-content: "center";
-	align-items: "center";
+	cursor: pointer;
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 1rem;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 10px;
+	transition: all 0.25s ease;
+	background-color: rgba(255, 255, 255, 0.902);
+}
+
+.news-container:hover {
+	transform: translateY(-10px);
+	box-shadow: 2px 2px 2px black;
 }
 
 .news-image {
+	margin-top: 1rem;
 }
 
+.news-image img {
+	width: 48rem;
+	transition: all 0.5s ease;
+}
 .news-text {
+	font-family: "Roboto", sans-serif;
+	margin: 0 2rem;
 }
 
 .news-title {
 	font-size: 2rem;
 }
-
 .news-description {
+	font-size: 1.3rem;
+}
+
+@media screen and (max-width: 1600px) {
+	.news-image img {
+		width: 38rem;
+	}
+
+	.news-title {
+		font-size: 1.7rem;
+	}
+}
+
+@media screen and (max-width: 1300px) {
+	.news-image img {
+		width: 30rem;
+	}
+
+	.news-title {
+		font-size: 0.8rem;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.news-image img {
+		width: 25rem;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.news-image img {
+		width: 20rem;
+	}
+}
+
+@media screen and (max-width: 670px) {
+	.news-image img {
+		width: 15rem;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.news-image img {
+		width: 14rem;
+	}
+	.news-title {
+		font-size: 1.3rem;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.news-image img {
+		width: 11rem;
+	}
 }
