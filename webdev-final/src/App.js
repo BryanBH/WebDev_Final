@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Landing from "./pages/Landing";
 import Results from "./pages/Results";
 import News from "./pages/News";
+import About from "./pages/About";
 
 function App() {
 	return (
@@ -13,7 +14,8 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Landing />} />
 				<Route path="/results" element={<Results />} />
-				<Route path="/news" element={<News/>}/>
+				<Route path="/news" element={<News />} />
+				<Route path="/about" element={<About/>}/>
 			</Routes>
 		</Router>
 	);
