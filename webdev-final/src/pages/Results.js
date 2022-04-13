@@ -79,13 +79,13 @@ const Results = () => {
 										<td>Level: {level.displayValue}</td>
 									</tr>
 									<tr>
-										<td>Bottom {100 - kills.percentile}%</td>
+										<td>Top {(100 - kills.percentile).toFixed(2)}%</td>
 										{damage ? (
 											<td>
-												Bottom {100 - damage.percentile}%
+												Top {(100 - damage.percentile).toFixed(2)}%
 											</td>
 										) : null}
-										<td>Bottom {100 - level.percentile}%</td>
+										<td>Top {(100 - level.percentile).toFixed(2)}%</td>
 									</tr>
 								</tbody>
 							</table>
@@ -136,15 +136,15 @@ const Results = () => {
 											{ability? (<td>{ability[1].displayValue}</td>) : null}
 										</tr>
 										<tr>
-											<td>Bottom {kills.percentile}%</td>
+											<td>Top {(100 - kills.percentile).toFixed(2)}%</td>
 											{damage ? (
 												<td>
-													Bottom {damage.percentile}%
+													Top {(100 - damage.percentile).toFixed(2)}%
 												</td>
 											) : null}
 											{ability? ( <td>
-												Bottom {""}
-												{100 - ability[1].percentile}%
+												Top {""}
+												{(100 - ability[1].percentile).toFixed(2)}%
 											</td>): null}
 										</tr>
 									</tbody>
