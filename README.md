@@ -5,6 +5,8 @@ Stat Tracker allows you to look up your random teammates stats
 * Legends Played 
 
 Stay up to date with the latest patch updates and skin releases
+# Required 
+Node JS is required to be downloaded and installed in your device in order to run the application.
 
 # Instructions 
 * Clone this repository.
